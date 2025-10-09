@@ -5,40 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ADORMA – Interactive Figures</title>
   <style>
+    :root { --border:#ddd; --muted:#555; }
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
-    h1 { margin-bottom: 0.5rem; }
-    p  { color: #555; }
-    ul { list-style: none; padding: 0; margin-top: 1rem; }
-    li { margin: 0.6rem 0; }
-    a  { text-decoration: none; }
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem 1.2rem; }
-    .card a { font-weight: 600; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    h1 { margin-bottom: 0.75rem; }
+    p  { color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .card { border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.2rem; }
+    .card h2 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; }
+    a  { text-decoration: none; font-weight: 600; }
+    .note { margin-top: 2rem; color: #777; font-size: 0.9rem; }
+    @media (max-width: 480px) { .links { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <h1>ADORMA – Interactive Figures</h1>
-  <p>Click to open each interactive Plotly/HTML figure.</p>
+  <p>Select a category below.</p>
 
   <div class="grid">
+    <!-- Adult -->
     <div class="card">
-      <a href="./smd_adult_fixed.html">Efficacy – Adult</a>
-      <div>Adult balance (standardized mean differences)</div>
+      <h2>Adult</h2>
+      <div class="links">
+        <a href="./smd_adult_fixed.html">Efficacy</a>
+        <a href="./adult_dropout.html">Tolerability</a>
+      </div>
     </div>
+
+    <!-- Children & Adolescents -->
     <div class="card">
-      <a href="./smd_child_fixed.html">Efficacy – Child</a>
-      <div>Child balance (standardized mean differences)</div>
-    </div>
-    <div class="card">
-      <a href="./adult_dropout.html">Dropout – Adult</a>
-      <div>Interactive study dropout curves (adults)</div>
-    </div>
-    <div class="card">
-      <a href="./child_dropout.html">Dropout – Child</a>
-      <div>Interactive study dropout curves (children)</div>
+      <h2>Children &amp; Adolescents</h2>
+      <div class="links">
+        <a href="./smd_child_fixed.html">Efficacy</a>
+        <a href="./child_dropout.html">Tolerability</a>
+      </div>
     </div>
   </div>
-  
+
+  <div class="note">
+    <small>Repo: ADORMA · Paths are case-sensitive. Adjust links if filenames differ.</small>
+  </div>
 </body>
 </html>
-
