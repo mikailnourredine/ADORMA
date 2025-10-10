@@ -9,43 +9,86 @@
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
     h1 { margin-bottom: 0.75rem; }
     p  { color: var(--muted); margin-top: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-top: 1rem; }
     .card { border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.2rem; }
-    .card h2 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
-    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; }
+    .card h2 { margin: 0 0 0.5rem 0; font-size: 1.15rem; }
+    .section { margin-top: 0.75rem; }
+    .section h3 { margin: 0 0 0.25rem 0; font-size: 1rem; }
+    .subhead { font-weight: 600; margin-top: 0.35rem; }
+    ul { margin: 0.25rem 0 0.25rem 1.2rem; padding: 0; }
+    li { margin: 0.25rem 0; }
     a  { text-decoration: none; font-weight: 600; }
     .note { margin-top: 2rem; color: #777; font-size: 0.9rem; }
-    @media (max-width: 480px) { .links { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <h1>ADORMA – Interactive Dose-effect curves</h1>
-  <p>Select a category below. Thoses figures are from the article XXX.</p>
+  <h1>ADORMA – Interactive Figures</h1>
+  <p>Select a category below. Paths/filenames are case-sensitive.</p>
 
   <div class="grid">
     <!-- Adult -->
     <div class="card">
       <h2>Adult</h2>
-      <div class="links">
-        <a href="./smd_adult_fixed.html">Efficacy</a>
-        <a href="./adult_dropout.html">Tolerability</a>
+
+      <div class="section">
+        <h3>Efficacy</h3>
+        <div class="subhead">– Fixed dose (main analysis)</div>
+        <ul>
+          <li><a href="./smd_adult_fixed.html">SMD</a></li>
+          <li><a href="./MD_adult_fixed.html">MD</a></li>
+        </ul>
+
+        <div class="subhead">– Flexible doses (secondary analysis)</div>
+        <ul>
+          <li><a href="./smd_adult_flexible.html">SMD (flexible doses)</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Tolerability</h3>
+        <div class="subhead">– Flexible dose</div>
+        <ul>
+          <li><a href="./adult_dropout.html">Dropout due to adverse events</a></li>
+        </ul>
       </div>
     </div>
 
     <!-- Children & Adolescents -->
     <div class="card">
       <h2>Children &amp; Adolescents</h2>
-      <div class="links">
-        <a href="./smd_child_fixed.html">Efficacy</a>
-        <a href="./child_dropout.html">Tolerability</a>
+
+      <div class="section">
+        <h3>Efficacy</h3>
+        <div class="subhead">– Fixed dose (main analysis)</div>
+        <ul>
+          <li><a href="./smd_child_fixed.html">SMD</a></li>
+          <li><a href="./MD_child_fixed.html">MD</a></li>
+        </ul>
+
+        <div class="subhead">– Flexible doses (secondary analysis)</div>
+        <ul>
+          <li><a href="./smd_child_flexible.html">SMD (flexible doses)</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Tolerability</h3>
+        <div class="subhead">– Flexible dose</div>
+        <ul>
+          <li><a href="./child_dropout.html">Dropout due to adverse events</a></li>
+        </ul>
       </div>
     </div>
   </div>
 
   <div class="note">
-    <small>Code available at: 
-      <a href="https://osf.io/mxrn2/" target="_blank" rel="noopener">https://osf.io/mxrn2/</a>
+    <small>
+      If you prefer the label under “Efficacy → Flexible doses” to read “Dropout adverse events” instead of
+      “SMD (flexible doses)”, tell me which file it should point to and I’ll adjust.
     </small>
   </div>
+</body>
+</html>
+
 </body>
 </html>
